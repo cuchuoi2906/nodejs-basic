@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node js basic</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <div style="padding-left:16px">
+        <h2>list User</h2>
+        <table>
+            <tr>
+                <th>use_id</th>
+                <th>lastName</th>
+                <th>fristName</th>
+                <th>email</th>
+                <th>addrest</th>
+            </tr>
+            <% for(var i=0;i < dataUser.length;i++) { %>
+                <tr>
+                    <td>
+                        <%= dataUser[i].use_id; %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].lastName; %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].fristName; %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].email; %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].addrest; %>
+                    </td>
+                    <td>
+                        <a href="/detail/users/<%=dataUser[i].use_id%>">Xem Chi tiết</a>
+                        <button type="button">Sửa</button>
+                        <button type="button">Xoá</button>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+
+</html>
